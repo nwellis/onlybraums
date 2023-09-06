@@ -47,6 +47,11 @@ const braums = await getCollection("braum")
 						i % 2 === 0 ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse",
 					]}
 				>
+					<img
+						class="w-48 h-48"
+						src={braum.data.image}
+						alt={braum.data.name}
+					/>
 					<div class:list={[
 						"flex-1 flex flex-col gap-4",
 						i % 2 === 0 ? "items-start" : "md:items-end",
