@@ -71,7 +71,10 @@ const braums = await getCollection("braum")
 							i % 2 === 0 ? "justify-start" : "md:justify-end"
 						]}>
 							{braum.data.tags?.map(tag => (
-								<p class="px-3 py-0.5 bg-black-nearly text-white rounded-full">{tag}</p>
+								<p class:list={[
+									braum.slug === "zac" ? "bg-green-700" : "bg-black-nearly",
+									"px-3 py-0.5 text-white rounded-full"
+								]}>{tag}</p>
 							))}	
 						</div>
 					</div>
