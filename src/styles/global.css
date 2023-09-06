@@ -1,0 +1,21 @@
+@layer utilities {
+  .animate-in-start {
+    @apply motion-safe:opacity-0 motion-safe:blur-sm motion-safe:-translate-x-4;
+  }
+
+  .animate-in-end {
+    @apply motion-safe:opacity-100 motion-safe:blur-none motion-safe:translate-x-0;
+  }
+}
+
+body::-webkit-scrollbar {
+  @apply w-2 bg-gray-dark;
+}
+
+body::-webkit-scrollbar-track {
+  @apply shadow-inner;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply outline outline-1 bg-gray-lighter rounded-lg;
+}
