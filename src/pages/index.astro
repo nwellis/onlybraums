@@ -34,12 +34,12 @@ const braums = await getCollection("braum")
 			</h2>
 		</header>
 
-		<main class="container flex flex-col items-center text-black py-8">
+		<main class="container max-w-3xl flex flex-col items-center text-black py-8">
 			{braums.map((braum, i) => (
 				<div
 					data-animate-in
 					class:list={[
-						"flex gap-4",
+						"w-full flex gap-4 py-6",
 						i % 2 === 0 ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse",
 					]}
 				>
@@ -48,12 +48,24 @@ const braums = await getCollection("braum")
 						src={braum.data.image}
 						alt={braum.data.name}
 					/>
-					<div class="flex-[3_3_0%] flex flex-col gap-4">
-						<h3 class="font-header text-black-nearly text-2xl">{braum.data.name}</h3>
-						<p class="text-xl">
+					<div class:list={[
+						"flex-1 flex flex-col gap-4",
+						i % 2 === 0 ? "items-start" : "items-end",
+					]}>
+						<h3 class:list={[
+							"font-header text-black-nearly text-2xl",
+							i % 2 === 0 ? "text-start" : "text-end"
+						]}>{braum.data.name}</h3>
+						<p class:list={[
+							"text-xl",
+							i % 2 === 0 ? "text-start" : "text-end"
+						]}>
 							{braum.data.teaser}
 						</p>
-						<div class="flex flex-wrap gap-1 font-semibold text-xl">
+						<div class:list={[
+							"flex flex-wrap gap-1 font-semibold text-xl",
+							i % 2 === 0 ? "justify-start" : "justify-end"
+						]}>
 							{braum.data.tags?.map(tag => (
 								<p class="px-3 py-0.5 bg-black-nearly text-white rounded-full">{tag}</p>
 							))}	
