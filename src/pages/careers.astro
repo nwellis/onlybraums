@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-const braums = await getCollection("braum")
+const jobs = await getCollection("job")
 ---
 
 <script>
@@ -30,15 +30,15 @@ const braums = await getCollection("braum")
 			"container px-4 py-4 flex flex-col gap-4",
 		]}>
 			<h1 class="font-header text-accent text-4xl">
-				Only Braums {"<3"}
+				Only Braums <span class="text-accent">Careers</span>
 			</h1>
-			<h2 class="font-header text-black-nearly text-2xl">
-				Find your next adventure… your next Braum
+			<h2 class="text-black-nearly text-2xl">
+				Looking to bring you passion into something that matters in this world? Look no further, help us bring the wonders of braum to everyone.
 			</h2>
 		</header>
 
 		<main class="container max-w-3xl flex flex-col items-center text-black px-4 py-8">
-			{braums.map((braum, i) => (
+			{jobs.map((job, i) => (
 				<div
 					data-animate-in
 					class:list={[
@@ -47,11 +47,6 @@ const braums = await getCollection("braum")
 						i % 2 === 0 ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse",
 					]}
 				>
-					<img
-						class="w-48 h-48"
-						src={braum.data.image}
-						alt={braum.data.name}
-					/>
 					<div class:list={[
 						"flex-1 flex flex-col gap-4",
 						i % 2 === 0 ? "items-start" : "md:items-end",
@@ -59,34 +54,20 @@ const braums = await getCollection("braum")
 						<h3 class:list={[
 							"font-header text-black-nearly text-3xl",
 							i % 2 === 0 ? "text-start" : "md:text-end"
-						]}>{braum.data.name}</h3>
+						]}>{job.data.title}</h3>
 						<p class:list={[
 							"text-xl",
 							i % 2 === 0 ? "text-start" : "md:text-end"
 						]}>
-							{braum.data.teaser}
+							{job.data.description}
 						</p>
-						<div class:list={[
-							"flex flex-wrap gap-1 font-semibold text-xl",
-							i % 2 === 0 ? "justify-start" : "md:justify-end"
-						]}>
-							{braum.data.tags?.map(tag => (
-								<p class:list={[
-									braum.slug === "zac" ? "bg-green-700" : "bg-black-nearly",
-									"px-3 py-0.5 text-white rounded-full"
-								]}>{tag}</p>
-							))}	
-						</div>
 					</div>
 				</div>
 			))}
 		</main>
 
-		<footer class="bg-black-nearly text-white">
-			<div class="container px-4 py-8 flex flex-row">
-				<h2 class="flex-1 font-header text-3xl">That's all the Braums for now, check back frequently for more Braums.</h2>
-				<a class="text-accent-light text-2xl underline" href="/careers">Careers</a>
-			</div>
+		<footer class="bg-black-nearly text-accent-light">
+			<h2 class="container px-4 py-8 font-header text-3xl text-center">That's all the Braums for now, check back frequently for more Braums.</h2>
 		</footer>
 	</div>
 </Layout>

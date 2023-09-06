@@ -1,5 +1,5 @@
 import { defineCollection, z } from "astro:content";
-// 2. Define your collection(s)
+
 const braumCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -10,6 +10,15 @@ const braumCollection = defineCollection({
   }),
 });
 
+const jobCollections = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 export const collections = {
   braum: braumCollection,
+  job: jobCollections,
 };
