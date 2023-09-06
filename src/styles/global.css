@@ -13,7 +13,7 @@
 }
 
 body::-webkit-scrollbar {
-  @apply w-2 bg-gray-dark;
+  @apply w-2 bg-black-nearly;
 }
 
 body::-webkit-scrollbar-track {
@@ -21,5 +21,5 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply outline outline-1 bg-gray-lighter rounded-lg;
+  @apply outline outline-1 bg-accent rounded-lg;
 }
