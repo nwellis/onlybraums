@@ -44,20 +44,17 @@ const jobs = await getCollection("job")
 					class:list={[
 						"animate-in-start duration-700 transition",
 						"w-full flex gap-4 py-6",
-						i % 2 === 0 ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse",
+						"flex-col md:flex-row",
 					]}
 				>
 					<div class:list={[
 						"flex-1 flex flex-col gap-4",
-						i % 2 === 0 ? "items-start" : "md:items-end",
 					]}>
 						<h3 class:list={[
 							"font-header text-black-nearly text-3xl",
-							i % 2 === 0 ? "text-start" : "md:text-end"
 						]}>{job.data.title}</h3>
 						<p class:list={[
 							"text-xl",
-							i % 2 === 0 ? "text-start" : "md:text-end"
 						]}>
 							{job.data.description}
 						</p>
