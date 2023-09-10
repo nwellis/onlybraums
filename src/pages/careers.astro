@@ -63,8 +63,14 @@ const jobs = await getCollection("job")
 			))}
 		</main>
 
-		<footer class="bg-black-nearly text-accent-light">
-			<h2 class="container px-4 py-8 font-header text-3xl text-center">That's all the Braums for now, check back frequently for more Braums.</h2>
+		<footer class="bg-black-nearly text-background">
+			<div class="container px-4 py-8 flex flex-row">
+				<h2 class="flex-1 font-header text-3xl"></h2>
+				<div class="flex flex-col gap-1">
+					<a class="text-accent-light text-2xl underline" href="/">Home</a>
+					<a class="text-accent-light text-2xl underline" href="/careers">Careers</a>
+				</div>
+			</div>
 		</footer>
 	</div>
 </Layout>
